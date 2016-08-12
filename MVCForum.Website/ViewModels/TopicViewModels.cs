@@ -104,7 +104,6 @@ namespace MVCForum.Website.ViewModels
         public string Name { get; set; }
 
         [UIHint(AppConstants.EditorType), AllowHtml]
-        [StringLength(6000)]
         public string Content { get; set; }
 
         [ForumMvcResourceDisplayName("Post.Label.IsStickyTopic")]
@@ -125,7 +124,7 @@ namespace MVCForum.Website.ViewModels
         public List<SelectListItem> Categories { get; set; }
 
         public IList<PollAnswer> PollAnswers { get; set; }
-            
+
         [ForumMvcResourceDisplayName("Topic.Label.SubscribeToTopic")]
         public bool SubscribeToTopic { get; set; }
 
