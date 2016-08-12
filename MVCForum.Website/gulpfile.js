@@ -3,18 +3,16 @@ This file in the main entry point for defining Gulp tasks and using Gulp plugins
 Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
 */
 
-// Sass configuration
 var gulp = require('gulp');
+
+// Requires the gulp-sass plugin
 var sass = require('gulp-sass');
 
-gulp.task('sass', function () {
-    gulp.src('*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest(function (f) {
-            return f.base;
-        }))
+gulp.task('default', function () {
+    // place code for your default task here
+    return gulp.src('Themes/Metro/Content/Styles/Theme.scss')
+     .pipe(sass()) // Converts Sass to CSS with gulp-sass
+     .pipe(gulp.dest('Themes/Metro/Content/Styles'))
 });
-
-gulp.task('default', ['sass'], function () {
-    gulp.watch('*.scss', ['sass']);
-})
+// Gulp watch syntax
+gulp.watch('files-to-watch', ['tasks', 'to', 'run']);
