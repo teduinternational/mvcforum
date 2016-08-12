@@ -585,7 +585,8 @@
 
             // We might only want to display the top 100
             // but there might not be 100 topics
-            var total = _context.Post.AsNoTracking().Where(x => x.User.Id == memberGuid && x.Pending != true && allowedCatIds.Contains(x.Topic.Category.Id)).DistinctBy(x => x.Topic.Id).Count();
+            var total = _context.Post.AsNoTracking()
+                .Where(x => x.User.Id == memberGuid && x.Pending != true && allowedCatIds.Contains(x.Topic.Category.Id)).Count();
             if (amountToTake < total)
             {
                 total = amountToTake;

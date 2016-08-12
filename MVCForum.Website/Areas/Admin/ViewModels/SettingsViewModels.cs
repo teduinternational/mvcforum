@@ -197,7 +197,6 @@ namespace MVCForum.Website.Areas.Admin.ViewModels
 
         [DisplayName("Terms & Conditions of the forum")]
         [UIHint(AppConstants.EditorType), AllowHtml]
-        [StringLength(6000)]
         public string TermsAndConditions { get; set; }
     }
 }
