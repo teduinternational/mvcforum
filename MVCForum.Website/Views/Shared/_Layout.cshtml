@@ -43,6 +43,8 @@
     
     <nav class="pushy pushy-left">
         <ul>
+          <li><a href="https://www.youtube.com/user/myskillscenter" target="_blank">@Html.LanguageString("Layout.Nav.YoutubeChannel")</a></li>
+
           <li><a href="http://tedu.com.vn" target="_blank">@Html.LanguageString("Layout.Nav.OfficialWebsite")</a></li>
 
             @if (User.Identity.IsAuthenticated)
@@ -82,6 +84,8 @@
                 <div class="collapse navbar-collapse" id="mvcforum-nav">
     
                     <ul class="nav navbar-nav navbar-right">
+                      <li><a href="https://www.youtube.com/user/myskillscenter" target="_blank">@Html.LanguageString("Layout.Nav.YoutubeChannel")</a></li>
+
                       <li><a href="http://tedu.com.vn" target="_blank">@Html.LanguageString("Layout.Nav.OfficialWebsite")</a></li>
 
                         @if (!User.Identity.IsAuthenticated)
