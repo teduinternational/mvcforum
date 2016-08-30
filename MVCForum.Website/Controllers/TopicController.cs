@@ -43,7 +43,7 @@
         public TopicController(ILoggingService loggingService, IUnitOfWorkManager unitOfWorkManager, IMembershipService membershipService, IRoleService roleService, ITopicService topicService, IPostService postService,
             ICategoryService categoryService, ILocalizationService localizationService, ISettingsService settingsService, ITopicTagService topicTagService, IMembershipUserPointsService membershipUserPointsService,
             ICategoryNotificationService categoryNotificationService, IEmailService emailService, ITopicNotificationService topicNotificationService, IPollService pollService,
-            IPollAnswerService pollAnswerService, IBannedWordService bannedWordService, IVoteService voteService, IFavouriteService favouriteService, IUploadedFileService uploadedFileService, ICacheService cacheService, 
+            IPollAnswerService pollAnswerService, IBannedWordService bannedWordService, IVoteService voteService, IFavouriteService favouriteService, IUploadedFileService uploadedFileService, ICacheService cacheService,
             ITagNotificationService tagNotificationService, IPostEditService postEditService)
             : base(loggingService, unitOfWorkManager, membershipService, localizationService, roleService, settingsService, cacheService)
         {
@@ -637,7 +637,7 @@
             if (allowedAccessCategories.Any())
             {
                 allowedAccessCategories.RemoveAll(x => allowedCreateTopicCategoryIds.Contains(x.Id));
-                allowedAccessCategories.RemoveAll(x =>UsersRole.RoleName != AppConstants.AdminRoleName && x.IsLocked);
+                allowedAccessCategories.RemoveAll(x => UsersRole.RoleName != AppConstants.AdminRoleName && x.IsLocked);
             }
             return allowedAccessCategories;
         }
@@ -1260,7 +1260,36 @@
                 return PartialView(viewModel);
             }
         }
+        [ChildActionOnly]
+        public ActionResult TopLastestTopics()
+        {
+            using (UnitOfWorkManager.NewUnitOfWork())
+            {
+                var allowedCategories = _categoryService.GetAllowedCategories(UsersRole);
+                var settings = SettingsService.GetSettings();
 
+                int pageIndex = 10;
+                int pageSize = 10;
+                // Get the topics
+                var topics = _topicService.GetRecentTopics(1, pageIndex,
+                                                           pageSize,
+                                                           allowedCategories);
+
+                // Get the Topic View Models
+                var topicViewModels = ViewModelMapping.CreateTopicViewModels(topics, RoleService, UsersRole, LoggedOnReadOnlyUser, allowedCategories, settings);
+
+                // create the view model
+                var viewModel = new ActiveTopicsViewModel
+                {
+                    Topics = topicViewModels,
+                    PageIndex = pageIndex,
+                    TotalCount = topics.TotalCount,
+                    TotalPages = topics.TotalPages
+                };
+
+                return PartialView(viewModel);
+            }
+        }
         [ChildActionOnly]
         public ActionResult HotTopics(DateTime? from, DateTime? to, int? amountToShow)
         {

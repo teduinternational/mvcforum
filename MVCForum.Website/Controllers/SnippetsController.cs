@@ -9,8 +9,8 @@
     {
         private readonly IMembershipUserPointsService _membershipUserPointsService;
 
-        public SnippetsController(ILoggingService loggingService, IUnitOfWorkManager unitOfWorkManager, IMembershipService membershipService, 
-            ILocalizationService localizationService, IRoleService roleService, ISettingsService settingsService, 
+        public SnippetsController(ILoggingService loggingService, IUnitOfWorkManager unitOfWorkManager, IMembershipService membershipService,
+            ILocalizationService localizationService, IRoleService roleService, ISettingsService settingsService,
             IMembershipUserPointsService membershipUserPointsService, ICacheService cacheService)
             : base(loggingService, unitOfWorkManager, membershipService, localizationService, roleService, settingsService, cacheService)
         {
@@ -19,25 +19,25 @@
 
         public PartialViewResult GetThisWeeksTopEarners()
         {
-            if(Request.IsAjaxRequest())
+            if (Request.IsAjaxRequest())
             {
                 using (UnitOfWorkManager.NewUnitOfWork())
                 {
                     var highEarners = _membershipUserPointsService.GetCurrentWeeksPoints(20);
                     var viewModel = new HighEarnersPointViewModel { HighEarners = highEarners };
-                    return PartialView(viewModel); 
+                    return PartialView(viewModel);
                 }
             }
-            return null;  
+            return null;
         }
 
-        public PartialViewResult GetThisYearsTopEarners()
+        public PartialViewResult GetThisYearsTopEarners(int top = 20)
         {
             if (Request.IsAjaxRequest())
             {
                 using (UnitOfWorkManager.NewUnitOfWork())
                 {
-                    var highEarners = _membershipUserPointsService.GetThisYearsPoints(20);
+                    var highEarners = _membershipUserPointsService.GetThisYearsPoints(top);
                     var viewModel = new HighEarnersPointViewModel { HighEarners = highEarners };
                     return PartialView(viewModel);
                 }

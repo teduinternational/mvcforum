@@ -153,6 +153,7 @@ namespace MVCForum.Domain.Constants
         // Database Connection Key
         public string MvcForumContext => GetConfig("MvcForumContext");
 
+
         // Default Theme folder
         public string ThemeRootFolder => GetConfig("ThemeRootFolder");
 

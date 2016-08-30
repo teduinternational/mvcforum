@@ -5,17 +5,21 @@
     ViewBag.MetaDesc = Html.Settings().MetaDesc;
 }
     
-
+@section Header {
+  @(
+        Bundle.JavaScript()
+            .Add("~/Scripts/home.js")
+            .MvcRender("~/scripts/cache/home-combined_#.js")
+  )
+}
 @section side
 {
     @Html.Partial("_CommonSideNav")
 }
-
-@Html.Action("LatestTopics", "Topic")
+@Html.Action("TopLastestTopics", "Topic")
 
 @*
     If you want to show categories on the home page instead of topics
     Just uncomment this action out and delete this text (And comment out the above action)
-    @Html.Action("ListMainCategories", "Category")
 *@
-
+@Html.Action("ListMainCategories", "Category")
