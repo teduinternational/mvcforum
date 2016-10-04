@@ -11,7 +11,17 @@
     VoteInPoll();
     ShowPostEditHistory();
     ModerateTopicPosts();
+    bindingFancyBox();
 });
+
+var bindingFancyBox = function () {
+    $(".postcontent img").on("click", function () {
+        $.fancybox($(this).attr("src"), {
+            // API options
+            padding: 0 // example
+        });
+    });
+}
 
 var ModerateTopicPosts = function() {
     var moderatepanel = $(".moderatepanelnav");
