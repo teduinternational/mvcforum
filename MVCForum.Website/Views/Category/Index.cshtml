@@ -2,6 +2,8 @@
     Layout = "~/Views/Shared/_LayoutRightSideBar.cshtml";
     ViewBag.Title = Html.Raw(Html.LanguageString("Category.AllCategories"));
 }
+
+
 @section side
 {
     @Html.Action("SideSearch", "Search")
