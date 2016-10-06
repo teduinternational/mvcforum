@@ -4,36 +4,33 @@
 @{
     Layout = null;
 }
-
 <div class="latesttopics">
   <div class="row">
     <div class="col-md-12">
       <h2><i class="fa fa-list-alt"></i> @Html.LanguageString("Home.LatestDiscussions")</h2>
       <div class="leaderboardholders cmt-cst">
-          <div class="panel-title">
-              <p class="Bài viết "></p>
-          </div>
+        <div class="panel-title">
+          <p class="Bài viết "></p>
+        </div>
         <ul class="list-group-item-text">
           @foreach (var topic in Model.Topics)
           {
               <li class="clearfix">
-                  <a href="@Html.Raw(topic.Topic.NiceUrl)">@Html.Raw(topic.Topic.Name) </a> 
-                  <span class="pull-right">
-                      đăng bởi <a href="@topic.Topic.User.NiceUrl">@topic.Topic.LastPost.User.UserName</a>
-                      <i>@DatesUI.GetPrettyDate(topic.Topic.LastPost.DateCreated.ToString())</i>
-                  </span>
+                <a href="@Html.Raw(topic.Topic.NiceUrl)">@Html.Raw(topic.Topic.Name) </a>
+                <span class="pull-right">
+                  đăng bởi <a href="@topic.Topic.User.NiceUrl">@topic.Topic.LastPost.User.UserName</a>
+                  <i>@DatesUI.GetPrettyDate(topic.Topic.LastPost.DateCreated.ToString())</i>
+                </span>
               </li>
           }
         </ul>
       </div>
-
     </div>
     @*<div class="col-md-4">
-      <h2>@Html.LanguageString("Leaderboard.ThisYearsStars")</h2>
-      <div class="leaderboardholders alltimeleaderboard">
-        <span class="ajaxspinner" title="@Html.LanguageString("Ajax.PleaseWait")">@Html.LanguageString("Ajax.PleaseWait")</span>
-      </div>
-    </div>*@
+        <h2>@Html.LanguageString("Leaderboard.ThisYearsStars")</h2>
+        <div class="leaderboardholders alltimeleaderboard">
+          <span class="ajaxspinner" title="@Html.LanguageString("Ajax.PleaseWait")">@Html.LanguageString("Ajax.PleaseWait")</span>
+        </div>
+      </div>*@
   </div>
 </div>
-

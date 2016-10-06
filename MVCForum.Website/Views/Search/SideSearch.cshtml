@@ -1,7 +1,21 @@
 ﻿@{
     var searchFor = Html.Lang("Side.Search.SearchFor");
 }
-<div class="side-box sidesearchbox">
+<div class="row">
+  <div class="col-md-12">
+    @using (Html.BeginForm("Index", "Search", FormMethod.Get))
+    {
+        <div class="input-group">
+          @Html.TextBox("term", null, new { @class = "form-control", placeholder = searchFor })
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">@Html.Lang("Side.Search.Go")</button>
+          </span>
+        </div>
+    }
+  </div>
+</div>
+
+@*<div class="side-box sidesearchbox">
     <h5>@Html.LanguageString("Side.Search")</h5>
 
     @using (Html.BeginForm("Index", "Search", FormMethod.Get))
@@ -13,4 +27,4 @@
             </span>
         </div>
     }
-</div>
+</div>*@

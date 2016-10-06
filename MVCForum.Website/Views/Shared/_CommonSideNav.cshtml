@@ -1,8 +1,9 @@
 ﻿@*@Html.Action("Index", "Language")*@
-@Html.Action("SideSearch", "Search")
+@*@Html.Action("SideSearch", "Search")*@
+@Html.Action("CurrentWeekHighPointUsers", "Point")
+
 @Html.Action("ListCategorySideMenu", "Category")
 
 @Html.Action("PopularTags", "Tag", new { amountToTake = 20 })
-@Html.Action("CurrentWeekHighPointUsers", "Point")
 @Html.Action("HotTopics", "Topic")
 @RenderPage("_FacebookEmbed.cshtml")
