@@ -6,7 +6,7 @@
 @if (!Model.Permissions[SiteConstants.Instance.PermissionDenyAccess].IsTicked)
 {
 
-    <div class="topicrow topicsticky-@(Model.Topic.IsSticky.ToString().ToLower()) topiclocked-@(Model.Topic.IsLocked.ToString().ToLower()) topicsolved-@(Model.Topic.Solved.ToString().ToLower())">
+    <div class="topicrow topicsticky-@(Model.Topic.IsSticky.ToString().ToLower()) topiclocked-@(Model.Topic.IsLocked.ToString().ToLower()) topicsolved-@(Model.Topic.Solved.ToString().ToLower()) clearfix">
 
         <div class="rowcreater hidden-xs">
             <a href="@Model.Topic.User.NiceUrl">
@@ -18,6 +18,7 @@
                     @Html.Lang("Post.MemberIsOnline")
                 </span>
             }
+
         </div>
 
         <div class="rowdetails">

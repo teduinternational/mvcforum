@@ -51,6 +51,11 @@
     @Html.Partial("_CommonSideNav")
 }
 
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57f3f4ab29a729ac"></script>
+
+
+
 @Html.Action("GetTopicBreadcrumb", "Topic", new { topic = Model.Topic })
 <div class="topicshow">
 
@@ -115,17 +120,21 @@
         Html.RenderPartial("_Poll", Model.Poll);
     }
 
-    <div class="topicstarterpost">
+    <div class="topicstarterpost clearfix">
         @{
             Html.RenderPartial("_Post", Model.StarterPost);
         }
         @if (Model.TotalCount > 0)
         {
-            <div class="row topicstarterpostbeginpostsheading">
-                <div class="col-md-8 hidden-xs topicstarterpostcomments">
+            <div class="topicstarterpostbeginpostsheading clearfix">
+                <div class="col-md-2 hidden-xs topicstarterpostcomments">
                     @(Model.TotalCount) @Html.LanguageString("Topic.CommentsDetails")
                 </div>
-                <div class="col-md-4 topicpostorderfilter">
+                <div class="col-md-5 hidden-xs ">
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_inline_share_toolbox"></div>
+                </div>
+                <div class="col-md-5 topicpostorderfilter">
                     @if ((Model.TotalCount - 1) > 0)
                     {
                         <text> @Html.LanguageString("PostFilter.OrderBy")

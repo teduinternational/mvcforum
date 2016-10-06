@@ -704,6 +704,7 @@
     <Content Include="Content\Images\emoticons\winking-face-facebook-symbol.png" />
     <Content Include="Content\Images\icon-poll.png" />
     <Content Include="Content\Images\icon-sticky.png" />
+    <Content Include="Content\Images\inew.gif" />
     <Content Include="Content\Images\mail-add.png" />
     <Content Include="Content\Images\mail-delete.png" />
     <Content Include="Content\Images\rss-icon.png" />
@@ -838,10 +839,11 @@
     <Content Include="Scripts\cache\Cache.txt" />
     <Content Include="Content\bootstrap\css\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap\css\bootstrap.min.css.map" />
-    <None Include="compilerconfig.json" />
-    <None Include="compilerconfig.json.defaults">
+    <Content Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
-    </None>
+    </Content>
+    <Content Include="MVCForum.Website.csproj.DotSettings" />
     <None Include="Properties\PublishProfiles\forum.pubxml" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\home.js" />

@@ -11,7 +11,7 @@ input.form-control, textarea.form-control, select.form-control {
 
 .navbar-default {
     /*background: #2abd54;*/
-    background-color:#2abd54;
+    background-color: #2abd54;
     border: none;
     -ms-border-radius: 0;
     border-radius: 0;
@@ -66,6 +66,19 @@ span.label-success {
 
 .input-group {
     z-index: 0;
+    margin-bottom: 10px;
+}
+
+.topicshow {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.topicheading h1 {
+    font-size: 21px !important;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px !important;
 }
 
 pre {
@@ -87,7 +100,7 @@ blockquote {
 .leaderboardholders, .side-box {
     background-color: #fff;
     padding: 10px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 
@@ -108,16 +121,20 @@ ul.list-group-item-text {
     padding: 0;
 }
 
+    ul.list-group-item-text li i {
+        color: #2abd54;
+    }
+
     ul.list-group-item-text li {
         list-style: none;
         border-bottom: 1px dotted #5b9dd9;
         padding: 10px;
-            font-size: 13px;
+        font-size: 13px;
     }
 
-    ul.list-group-item-text li:hover{
-        background-color:#bedfeb;
-    }
+        ul.list-group-item-text li:hover {
+            background-color: #bedfeb;
+        }
 
         ul.list-group-item-text li a {
             font-size: 13px;
@@ -308,12 +325,21 @@ a, a:visited {
     color: #333;
 }
 
-    .btn-mvc:hover, .btn-mvc:focus, .btn-mvc:active, .btn-mvc:visited:hover, .btn-mvc:visited:focus, .btn-mvc:visited:active {
+    /*.facebookloginbutton:hover, .facebookloginbutton:focus, .facebookloginbutton:active, .facebookloginbutton:visited:hover, .facebookloginbutton:visited:focus, .facebookloginbutton:visited:active {
         text-decoration: none;
-        background-color: #e0e0e0;
+        background-color: #3b5998;
         color: #333;
+    }*/
+    .facebookloginbutton {
+        background-color:#3b5998;
+        color:#fff;
     }
-
+    .googleloginbutton {
+        background-color:#dd4b39;
+    }
+ .oauthbuttons a, .oauthbuttons a i {
+     color:#fff;
+ }
 .btn-mvc-red, .btn-mvc-red:visited {
     display: inline-block;
     padding: 7px 20px;
@@ -563,11 +589,14 @@ section.content-strip {
 }
 
 .breadcrumb {
-    background: none;
-    padding: 0 0 15px 0;
-    margin: -12px 0 0 0;
+   background: none;
+    padding: 10px;
     font-size: 12px;
+    background-color: #fff;
+    margin-bottom:10px!important;
 }
+
+
 
     .breadcrumb a, .breadcrumb a:visited {
         color: #636267;
@@ -575,19 +604,19 @@ section.content-strip {
 
 
 
-    .side-box a, .side-box a:visited {
-        color: #3b3b3b;
-    }
+.side-box a, .side-box a:visited {
+    color: #3b3b3b;
+}
 
-    .side-box h5 {
-        font-size: 12px;
-        color: #636267;
-        text-transform: uppercase;
-        border-bottom: 1px solid #ecf0f1;
-        padding-bottom: 8px;
-        margin-bottom: 12px;
-        font-weight:600;
-    }
+.side-box h5 {
+    font-size: 12px;
+    color: #636267;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
 
 @media(max-width:991px) {
     .side-box {
@@ -651,7 +680,24 @@ section.content-strip {
             }
 
 .leaderboard .leaderboardholders {
-    padding: 20px;
+    /*padding: 20px;*/
+}
+
+.highearners-box ul li {
+    border-bottom: 1px solid #efefef;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.thisweeksstars h2, .thisyearsstars h2 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #000;
+}
+
+.highearners-box ul li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .leaderboard .thisyearsstars {
@@ -786,13 +832,16 @@ section.content-strip {
 
 .rowcreater {
     float: left;
-    width: 77px;
+    width: 90px;
+    height: 120px;
     text-align: center;
+    border: 1px solid #e2f5ea;
+    padding: 20px 0;
 }
 
     .rowcreater img {
-        -ms-border-radius: 50%;
-        border-radius: 50%;
+        /*-ms-border-radius: 50%;
+        border-radius: 50%;*/
         max-width: 50px;
     }
 
@@ -813,7 +862,11 @@ section.content-strip {
     }
 
 .rowdetails {
-    margin-left: 70px;
+    margin-left: 120px;
+}
+
+.topicstarterpost .post:first-child {
+    background-color: #effbe9;
 }
 
 @media(max-width:767px) {
@@ -853,12 +906,13 @@ section.content-strip {
     }
 
         .topicrow .rowdetails h3 a, .topicrow .rowdetails h3 a:visited {
-            font-size: 22px;
-            color: #494848;
+            font-size: 17px;
+            color: #2abd54;
             font-weight: 600;
             margin-top: 7px;
             line-height: 26px;
             text-decoration: none;
+            
         }
 
             .topicrow .rowdetails h3 a span.glyphicon, .topicrow .rowdetails h3 a:visited span.glyphicon {
@@ -898,11 +952,12 @@ section.content-strip {
         }
 
 .topicstarterpostbeginpostsheading {
-    padding-bottom: 3px;
+    padding: 10px 0px;
+    background-color: #afd9a0;
 }
 
 .topicstarterpost {
-    border-bottom: 2px #f2f2f2 solid;
+    border-bottom: 2px #2abd54 solid;
 }
 
 .topicrow-slim {
@@ -933,6 +988,18 @@ section.content-strip {
 .widgetright {
     float: right;
     margin: 2px 0 10px 10px;
+}
+
+.mainheading h1{    
+    font-size: 21px;
+    font-weight: 600;
+    color: #000;
+
+}
+
+.activityholder {
+    background-color:#fff;
+    padding:10px;
 }
 
     .widgetright a, .widgetright a:visited {
@@ -998,7 +1065,7 @@ section.content-strip {
         padding: 0;
         margin: 0;
         color: #b3b3b3;
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 300;
     }
 
@@ -1023,32 +1090,34 @@ section.content-strip {
 
 .categoryrow {
     border-bottom: 1px #f2f2f2 solid;
-    background-color:#fff;
-    margin-bottom:20px;
+    background-color: #fff;
+    margin-bottom: 20px;
 }
 
 .group-content-category {
-    padding:0 10px 10px 10px;
+    padding: 0 10px 10px 10px;
 }
-    .categoryrow h2 {
-        padding:0 10px 7px;
-        background-color:#2abd54;
-        margin:0;
-    }
+
+.categoryrow h2 {
+    padding: 0 10px 7px;
+    background-color: #2abd54;
+    margin: 0;
+}
+
     .categoryrow h2 i {
-        color:#fff;
-    }
-
-    .categoryrow a, .categoryrow a:visited {
         color: #fff;
-        font-size:18px;
-        font-weight:600;
-        text-transform:capitalize;
     }
 
-    .categoryrow:last-child {
-        border: none;
-    }
+.categoryrow a, .categoryrow a:visited {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.categoryrow:last-child {
+    border: none;
+}
 
 .categoryrowfooter {
     color: #b3b3b3;
@@ -1059,14 +1128,18 @@ section.content-strip {
 
     .categoryrowfooter .catmostrecent a, .categoryrowfooter .catmostrecent a:visited {
         font-weight: 400;
-        color:#2470bb;
+        color: #2470bb;
     }
 
 .catmostrecent a {
-    font-size:14px;
-    color:#003b83;
+    font-size: 14px;
+    color: #003b83;
 }
 
+.topicrow  {
+    background-color:#fff;
+    border-bottom:1px solid #ecf0f1;
+}
 
 .following-categories {
     padding-bottom: 20px;
@@ -1075,7 +1148,16 @@ section.content-strip {
 }
 
 .mainheading {
-    padding-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+.memberprofilepublic {
+    background-color:#fff;
+    padding:10px;
+}
+
+.memberavatardetails {
+    border:#b3b3b3;
 }
 
 .pagination > li > a, .pagination > li > a:visited, .pagination > li > span {
@@ -1104,7 +1186,7 @@ section.content-strip {
 
 .post {
     border-top: 1px #f2f2f2 solid;
-    padding: 15px 0 15px 0;
+    padding: 10px 10px 10px 10px;
 }
 
     .post .glyphicon-star {
@@ -1622,14 +1704,17 @@ footer {
 
     footer h6 {
         margin-bottom: 12px;
-        color:#fff;
+        color: #fff;
     }
-    .board-stats p{
-        color:#fff;
-    }
-    .active-members p {
-        color:#fff;
-    }
+
+.board-stats p {
+    color: #fff;
+}
+
+.active-members p {
+    color: #fff;
+}
+
 .latest-members ul {
     padding: 0;
     margin: 0;
@@ -1681,7 +1766,9 @@ footer {
     font-size: 24px;
     margin-right: 15px;
 }
-
+.oauthbuttons {
+   
+}
 .loginortext {
     font-size: 32px;
     text-align: center;
@@ -1689,8 +1776,10 @@ footer {
 }
 
 .memberprofilepublic h3 {
-    padding: 0 0 15px 0;
+    padding: 0 0 10px 0;
     margin: 0 0 15px 0;
+    font-size: 19px;
+    font-weight: 600;
     border-bottom: 1px #f2f2f2 solid;
 }
 
@@ -1704,6 +1793,9 @@ footer {
 
 .memberavatardetails .memberavatar {
     text-align: center;
+    border: 2px solid #ecf0f1;
+    padding: 47px 0;
+    border-radius:3px;
 }
 
     .memberavatardetails .memberavatar img {
@@ -1714,7 +1806,9 @@ footer {
 .memberavatardetails .btn-mvc {
     width: 100%;
 }
-
+.badgeholder {
+    background-color:#fff;
+}
 .editmemberform .membereditavatar {
     padding-bottom: 12px;
 }
@@ -2675,4 +2769,9 @@ div.mce-path {
 
     .moderatepostholder .postsnippet .postuser {
         font-style: italic;
+    }
+
+    .register-members {
+        background-color:#fff;
+        padding:20px 20px;
     }

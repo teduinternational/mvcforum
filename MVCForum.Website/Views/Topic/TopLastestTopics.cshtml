@@ -16,7 +16,7 @@
           @foreach (var topic in Model.Topics)
           {
               <li class="clearfix">
-                <a href="@Html.Raw(topic.Topic.NiceUrl)">@Html.Raw(topic.Topic.Name) </a>
+                <img src="~/Content/Images/inew.gif"/> <a href="@Html.Raw(topic.Topic.NiceUrl)">@Html.Raw(topic.Topic.Name) </a>
                 <span class="pull-right">
                   đăng bởi <a href="@topic.Topic.User.NiceUrl">@topic.Topic.LastPost.User.UserName</a>
                   <i>@DatesUI.GetPrettyDate(topic.Topic.LastPost.DateCreated.ToString())</i>

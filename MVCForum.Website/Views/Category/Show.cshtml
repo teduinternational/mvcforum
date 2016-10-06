@@ -63,7 +63,7 @@
         {
             <img src="@AppHelpers.CategoryImage(Model.Category.Image, Model.Category.Id,110)" alt="@Model.Category" class="categoryimage" />
         }
-        <h1>@Html.Raw(Model.Category.Name)</h1>
+        <h1><i class="fa fa-sliders"></i> @Html.Raw(Model.Category.Name)</h1>
         <p>@Html.Raw(AppHelpers.ConvertPostContent(Model.Category.Description))</p>
     </div>
 
